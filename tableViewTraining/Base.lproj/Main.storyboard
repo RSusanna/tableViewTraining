@@ -7,22 +7,78 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Кошечки-->
         <scene sceneID="6uf-KX-qFd">
             <objects>
-                <tableViewController id="p8Y-Al-ITX" customClass="MainViewController" customModule="tableViewTraining" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="6Qm-T1-JiY">
+                <tableViewController title="Кошечки" id="p8Y-Al-ITX" customClass="MainViewController" customModule="tableViewTraining" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="6Qm-T1-JiY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="ixA-Lk-1Ro">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="ixA-Lk-1Ro" customClass="CustomTableViewCell" customModule="tableViewTraining" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ixA-Lk-1Ro" id="D2U-OU-jEZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aPA-Mp-5zv">
+                                            <rect key="frame" x="15" y="10" width="65" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="65" id="LFW-B4-NS4"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHu-cO-O98">
+                                            <rect key="frame" x="95" y="9" width="293" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="ozA-X0-ULk"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="21"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Локация" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8DV-tk-PJo">
+                                            <rect key="frame" x="95" y="35" width="278" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15" id="rmY-KF-hCJ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цитата" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDy-O3-rco">
+                                            <rect key="frame" x="95" y="54" width="278" height="13"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="13" id="y6F-aE-Oat"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="aPA-Mp-5zv" firstAttribute="leading" secondItem="D2U-OU-jEZ" secondAttribute="leading" constant="15" id="2SM-RJ-Kzh"/>
+                                        <constraint firstItem="BDy-O3-rco" firstAttribute="trailing" secondItem="D2U-OU-jEZ" secondAttribute="trailingMargin" id="2ug-PQ-IiT"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="BDy-O3-rco" secondAttribute="bottom" constant="22" id="GoO-yU-6bQ"/>
+                                        <constraint firstItem="8DV-tk-PJo" firstAttribute="leading" secondItem="aPA-Mp-5zv" secondAttribute="trailing" constant="15" id="KzZ-kG-vAl"/>
+                                        <constraint firstItem="BDy-O3-rco" firstAttribute="top" secondItem="8DV-tk-PJo" secondAttribute="bottom" constant="4" id="Pv8-m5-dEd"/>
+                                        <constraint firstItem="xHu-cO-O98" firstAttribute="leading" secondItem="aPA-Mp-5zv" secondAttribute="trailing" constant="15" id="QNw-Np-IJy"/>
+                                        <constraint firstItem="8DV-tk-PJo" firstAttribute="top" secondItem="xHu-cO-O98" secondAttribute="bottom" constant="5" id="Www-y5-XWE"/>
+                                        <constraint firstItem="BDy-O3-rco" firstAttribute="leading" secondItem="aPA-Mp-5zv" secondAttribute="trailing" constant="15" id="Zte-uI-D6H"/>
+                                        <constraint firstItem="8DV-tk-PJo" firstAttribute="trailing" secondItem="D2U-OU-jEZ" secondAttribute="trailingMargin" id="a6X-hq-mpy"/>
+                                        <constraint firstItem="xHu-cO-O98" firstAttribute="top" secondItem="D2U-OU-jEZ" secondAttribute="top" constant="9" id="hFb-Wp-Wqc"/>
+                                        <constraint firstItem="aPA-Mp-5zv" firstAttribute="centerY" secondItem="D2U-OU-jEZ" secondAttribute="centerY" id="kjA-Ji-9mj"/>
+                                        <constraint firstItem="aPA-Mp-5zv" firstAttribute="top" secondItem="D2U-OU-jEZ" secondAttribute="top" constant="10" id="qcy-hc-uRP"/>
+                                        <constraint firstAttribute="trailing" secondItem="xHu-cO-O98" secondAttribute="trailing" constant="5" id="sCy-eK-GkI"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="catsImage" destination="aPA-Mp-5zv" id="s3q-xB-ONH"/>
+                                    <outlet property="catsLocation" destination="8DV-tk-PJo" id="e1J-i2-ryq"/>
+                                    <outlet property="catsName" destination="xHu-cO-O98" id="ivh-W0-yLg"/>
+                                    <outlet property="catsQuote" destination="BDy-O3-rco" id="ivL-aB-pvp"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -30,14 +86,14 @@
                             <outlet property="delegate" destination="p8Y-Al-ITX" id="pOH-BZ-rRQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="HxA-pX-5EN"/>
+                    <navigationItem key="navigationItem" title="Наши кошечки:" id="HxA-pX-5EN"/>
                     <connections>
                         <outlet property="catsTableView" destination="6Qm-T1-JiY" id="Pcb-hd-UDN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OSb-oH-bi2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="775" y="381"/>
+            <point key="canvasLocation" x="774.80916030534343" y="380.98591549295776"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="57r-AO-TKj">
@@ -46,6 +102,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zcm-eI-Pc7">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="27"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="p8Y-Al-ITX" kind="relationship" relationship="rootViewController" id="PcY-3u-JjE"/>

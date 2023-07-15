@@ -11,9 +11,9 @@ class MainViewController: UITableViewController {
 
         @IBOutlet var catsTableView: UITableView!
                 
-        let catsName = ["Альфред", "Стоямба", "Пробудившийся", "Йена", "Невергивап", "Повар", "Клерк", "Офицер", "Бегемот", "Лягушка", "Крайбейби", "Именинник", "Инстасамка", "Малыш", "Кот"]
+        let catsNames = ["Анимекот", "Стоямба", "Пробудившийся", "Йена", "Невергивап", "Повар", "Клерк", "Офицер", "Бегемот", "Лягушка", "Крайбейби", "Именинник", "Инстасамка", "Малыш", "Кот"]
           
-          let catsImages = ["Альфред.jpg", "Стоямба.jpg", "Пробудившийся.jpg", "Йена.jpg", "Невергивап.jpg", "Повар.jpg", "Клерк.jpg", "Офицер.jpg", "Бегемот.jpg", "Лягушка.jpg", "Крайбейби.jpg", "Именинник.jpg", "Инстасамка.jpg", "Малыш.jpg", "Кот.jpg"]
+          let catsImages = ["Анимекот.jpg", "Стоямба.jpg", "Пробудившийся.jpg", "Йена.jpg", "Невергивап.jpg", "Повар.jpg", "Клерк.jpg", "Офицер.jpg", "Бегемот.jpg", "Лягушка.jpg", "Крайбейби.jpg", "Именинник.jpg", "Инстасамка.jpg", "Малыш.jpg", "Кот.jpg"]
     
     override func viewDidLoad() {
         super.viewDidLoad()          
@@ -24,32 +24,25 @@ class MainViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return catsName.count
+        return catsNames.count
  
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
-        cell.textLabel?.text = catsName[indexPath.row]
         
-        
-        if let image = UIImage(named: catsImages[indexPath.row]) {
-            // Настройка изображения в ячейке
-            
-            //scaledToFill - это метод расширения для класса UIImage, который изменяет размер изображения, чтобы оно заполнило заданный целевой размер.
-            //targetSize - это параметр, представляющий размер, до которого вы хотите масштабировать изображение. В коде, targetSize установлен как CGSize(width: 200, height: 200), что означает, что изображение будет масштабировано до ширины 200 поинтов и высоты 200 поинтов.
-            cell.imageView?.image = image.scaledToFill(targetSize: CGSize(width: 300, height: 450))
+        // as! -  это сделали приведение cell к нашему новому классу CustomTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
-            //.scaleAspectFill, что означает, что изображение будет заполнено весь доступный фрейм с сохранением пропорций. Изображение может быть обрезано для заполнения фрейма.
-            cell.imageView?.contentMode = .scaleAspectFit
-            //cell.imageView?.clipsToBounds = true: clipsToBounds - это свойство UIView, которое определяет, должны ли подслои внутри представления быть обрезаны по границам самого представления. В данном случае установлено значение true, чтобы гарантировать, что изображение не выходит за пределы imageView и остается видимым только в пределах этого представления.
-            cell.imageView?.clipsToBounds = true
-        }
+        cell.catsName?.text = catsNames[indexPath.row]
+        cell.catsImage?.image = UIImage(named: catsNames[indexPath.row])
         return cell
     }
-    
+/*
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+}
+*/
 
    
     // MARK: - Navigation
