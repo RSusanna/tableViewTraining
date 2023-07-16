@@ -109,6 +109,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="7wT-Sa-ENm">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -152,25 +153,28 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hqZ-yT-91w">
-                                                    <rect key="frame" x="16" y="8" width="361" height="64"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hqZ-yT-91w">
+                                                    <rect key="frame" x="16" y="8" width="361" height="68"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z72-sw-dbs">
-                                                            <rect key="frame" x="0.0" y="0.0" width="361" height="18.666666666666668"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="361" height="28"/>
                                                             <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Имя" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k9F-sh-4b1">
-                                                            <rect key="frame" x="0.0" y="26.666666666666661" width="361" height="37.333333333333343"/>
+                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k9F-sh-4b1">
+                                                            <rect key="frame" x="0.0" y="36" width="361" height="32"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="Oxj-sz-wYb" id="BgB-nK-gdo"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="hqZ-yT-91w" secondAttribute="bottom" constant="8" id="2XQ-5d-4l5"/>
+                                                <constraint firstAttribute="bottom" secondItem="hqZ-yT-91w" secondAttribute="bottom" constant="4" id="2XQ-5d-4l5"/>
                                                 <constraint firstItem="hqZ-yT-91w" firstAttribute="leading" secondItem="CzZ-sf-2SP" secondAttribute="leading" constant="16" id="CL2-fw-DGL"/>
                                                 <constraint firstItem="hqZ-yT-91w" firstAttribute="top" secondItem="CzZ-sf-2SP" secondAttribute="top" constant="8" id="ihi-IX-8KE"/>
                                                 <constraint firstAttribute="trailing" secondItem="hqZ-yT-91w" secondAttribute="trailing" constant="16" id="uC2-4H-Tkm"/>
@@ -184,25 +188,28 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UQj-ab-gsa">
-                                                    <rect key="frame" x="16" y="8" width="361" height="64"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UQj-ab-gsa">
+                                                    <rect key="frame" x="16" y="8" width="361" height="68"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Приют" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RR7-6E-KC7">
-                                                            <rect key="frame" x="0.0" y="0.0" width="361" height="18.666666666666668"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="361" height="28"/>
                                                             <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Приют" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h1y-NP-TVS">
-                                                            <rect key="frame" x="0.0" y="26.666666666666661" width="361" height="37.333333333333343"/>
+                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Приют" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h1y-NP-TVS">
+                                                            <rect key="frame" x="0.0" y="36" width="361" height="32"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="Oxj-sz-wYb" id="lyF-Fs-VvA"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="UQj-ab-gsa" secondAttribute="bottom" constant="8" id="PAd-8l-kPk"/>
+                                                <constraint firstAttribute="bottom" secondItem="UQj-ab-gsa" secondAttribute="bottom" constant="4" id="PAd-8l-kPk"/>
                                                 <constraint firstAttribute="trailing" secondItem="UQj-ab-gsa" secondAttribute="trailing" constant="16" id="hFn-j3-MOs"/>
                                                 <constraint firstItem="UQj-ab-gsa" firstAttribute="top" secondItem="A8N-2T-wny" secondAttribute="top" constant="8" id="sCR-JJ-NbH"/>
                                                 <constraint firstItem="UQj-ab-gsa" firstAttribute="leading" secondItem="A8N-2T-wny" secondAttribute="leading" constant="16" id="vBr-2s-nmi"/>
@@ -216,19 +223,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="n8s-cQ-16l">
-                                                    <rect key="frame" x="16" y="8" width="361" height="64"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="n8s-cQ-16l">
+                                                    <rect key="frame" x="16" y="8" width="361" height="68"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SkA-rP-hiL">
-                                                            <rect key="frame" x="0.0" y="0.0" width="361" height="18.666666666666668"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="361" height="28"/>
                                                             <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Описание" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4MX-b0-dX6">
-                                                            <rect key="frame" x="0.0" y="26.666666666666661" width="361" height="37.333333333333343"/>
+                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Описание" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4MX-b0-dX6">
+                                                            <rect key="frame" x="0.0" y="36" width="361" height="32"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="Oxj-sz-wYb" id="CBz-IX-7os"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -237,7 +247,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="n8s-cQ-16l" secondAttribute="trailing" constant="16" id="0ZT-d8-Eyy"/>
                                                 <constraint firstItem="n8s-cQ-16l" firstAttribute="leading" secondItem="gaD-9N-CJq" secondAttribute="leading" constant="16" id="Ccg-Zw-8Sb"/>
                                                 <constraint firstItem="n8s-cQ-16l" firstAttribute="top" secondItem="gaD-9N-CJq" secondAttribute="top" constant="8" id="IYY-5U-n2p"/>
-                                                <constraint firstAttribute="bottom" secondItem="n8s-cQ-16l" secondAttribute="bottom" constant="8" id="QS4-1b-nfj"/>
+                                                <constraint firstAttribute="bottom" secondItem="n8s-cQ-16l" secondAttribute="bottom" constant="4" id="QS4-1b-nfj"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -259,7 +269,6 @@
         <!--Navigation Controller-->
         <scene sceneID="57r-AO-TKj">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uUn-zw-wVB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="d9G-R3-Doj" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zcm-eI-Pc7">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -272,6 +281,7 @@
                         <segue destination="p8Y-Al-ITX" kind="relationship" relationship="rootViewController" id="PcY-3u-JjE"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uUn-zw-wVB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-131" y="381"/>
         </scene>
