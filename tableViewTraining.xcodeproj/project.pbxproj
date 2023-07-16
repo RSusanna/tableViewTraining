@@ -15,6 +15,7 @@
 		D1F578262A62D6550021D99E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F578252A62D6550021D99E /* MainViewController.swift */; };
 		D1F578282A6305FE0021D99E /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F578272A6305FE0021D99E /* CustomTableViewCell.swift */; };
 		D1F5782B2A6314570021D99E /* CatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5782A2A6314570021D99E /* CatModel.swift */; };
+		D1F5782D2A64133E0021D99E /* NewCatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5782C2A64133E0021D99E /* NewCatTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D1F578252A62D6550021D99E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D1F578272A6305FE0021D99E /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		D1F5782A2A6314570021D99E /* CatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatModel.swift; sourceTree = "<group>"; };
+		D1F5782C2A64133E0021D99E /* NewCatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCatTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				D1F578292A63143A0021D99E /* Supporting Files */,
 				D1F578252A62D6550021D99E /* MainViewController.swift */,
 				D1F5782A2A6314570021D99E /* CatModel.swift */,
+				D1F5782C2A64133E0021D99E /* NewCatTableViewController.swift */,
 				D1F578272A6305FE0021D99E /* CustomTableViewCell.swift */,
 				D167D26A2A5C8C62001235DE /* Main.storyboard */,
 				D167D26D2A5C8C64001235DE /* Assets.xcassets */,
@@ -157,6 +160,7 @@
 				D1F578282A6305FE0021D99E /* CustomTableViewCell.swift in Sources */,
 				D1F5782B2A6314570021D99E /* CatModel.swift in Sources */,
 				D1F578262A62D6550021D99E /* MainViewController.swift in Sources */,
+				D1F5782D2A64133E0021D99E /* NewCatTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +310,7 @@
 				DEVELOPMENT_TEAM = 64R8G8Z837;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "tableViewTraining/Supporting files/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "camera use";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -337,6 +342,7 @@
 				DEVELOPMENT_TEAM = 64R8G8Z837;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "tableViewTraining/Supporting files/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "camera use";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
