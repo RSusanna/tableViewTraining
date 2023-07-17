@@ -14,7 +14,7 @@ struct Cat {
     var location: String?
     var quote: String?
     var image: UIImage?
-    var catsImage: String?
+    var catsPhoto: String?
     
     static   let catsNames = ["Анимекот",
                      "Стоямба",
@@ -38,7 +38,7 @@ struct Cat {
         var catCurrentGuest = [Cat]()
      
         for cat in catsNames {
-            catCurrentGuest.append(Cat(name: cat, location: "приют 1", quote: "готов найти семью", image: nil, catsImage: cat))
+            catCurrentGuest.append(Cat(name: cat, location: "приют 1", quote: "готов найти семью", image: nil, catsPhoto: cat))
         }
         return catCurrentGuest
     }

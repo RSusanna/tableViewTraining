@@ -20,7 +20,7 @@ class MainViewController: UITableViewController {
     var cats = Cat.getNewCat()
     //15.21
     
-          var catsImages = ["Анимекот.jpg", "Стоямба.jpg", "Пробудившийся.jpg", "Йена.jpg", "Невергивап.jpg", "Повар.jpg", "Клерк.jpg", "Офицер.jpg", "Бегемот.jpg", "Лягушка.jpg", "Крайбейби.jpg", "Именинник.jpg", "Инстасамка.jpg", "Малыш.jpg", "Кот.jpg"]
+          var catsImagesNames = ["Анимекот.jpg", "Стоямба.jpg", "Пробудившийся.jpg", "Йена.jpg", "Невергивап.jpg", "Повар.jpg", "Клерк.jpg", "Офицер.jpg", "Бегемот.jpg", "Лягушка.jpg", "Крайбейби.jpg", "Именинник.jpg", "Инстасамка.jpg", "Малыш.jpg", "Кот.jpg"]
     
     override func viewDidLoad() {
         super.viewDidLoad()          
@@ -49,14 +49,23 @@ class MainViewController: UITableViewController {
         cell.catsQuote.text = catGuest.quote
         
         if catGuest.image == nil {
-            cell.catsImage.image =  UIImage(named: catGuest.catsImage!)
+            cell.catsImage.image =  UIImage(named: catGuest.catsPhoto!) //тут ошибка
         } else {
             cell.catsImage.image = catGuest.image
         }
         return cell
     }
+/*
+ Ошибка "-[UITableViewCellContentView text]: unrecognized selector sent to instance" возникает, когда вы пытаетесь вызвать метод text на объекте UITableViewCellContentView, который не имеет такого метода. Это может происходить, если вы обращаетесь к неправильному объекту или неправильно настроили связи между компонентами интерфейса и кодом.
 
-   
+ В вашем коде, ошибка находится в методе tableView(_:cellForRowAt:) в классе MainViewController. В этом методе, при установке текстового содержимого для ячейки, вы обращаетесь к неправильному объекту catsName, catsLocation и catsQuote.
+
+ Чтобы исправить ошибку, убедитесь, что вы правильно связали эти элементы пользовательского интерфейса с соответствующими свойствами и методами вашего кода. Убедитесь, что вы обращаетесь к правильным объектам в методе tableView(_:cellForRowAt:) и используете правильные свойства и методы для установки текста.
+
+ Проверьте, что у вас есть правильные идентификаторы ячеек в сториборде и что вы правильно связали элементы ячейки с соответствующими свойствами класса CustomTableViewCell.
+
+ Также, убедитесь, что у вас нет других мест в коде, где вы пытаетесь обращаться к неправильным объектам или вызывать неправильные методы для текстового содержимого ячеек.
+ */
     // MARK: - Navigation
 
 //    In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -71,6 +80,6 @@ class MainViewController: UITableViewController {
         guard let newCatVC = segue.source as? NewCatTableViewController else { return }
         newCatVC.saveNewCat()
         cats.append(newCatVC.newCat!)
-     tableView.reloadData()
+        tableView.reloadData()
     }
 }

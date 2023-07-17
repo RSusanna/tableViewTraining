@@ -103,7 +103,7 @@ extension NewCatTableViewController: UITextFieldDelegate {
                      location: newCatPlace.text,
                      quote: newCatQuote.text,
                      image: newCatImage.image, // мне кажется тут ошибка это как раз картинка которую можно заполнять
-                    catsImage: nil)
+                    catsPhoto: nil)
         
     }
     
