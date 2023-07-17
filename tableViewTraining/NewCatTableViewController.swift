@@ -9,13 +9,27 @@ import UIKit
 
 class NewCatTableViewController: UITableViewController {
     
-    @IBOutlet var imageOfCat: UIImageView!
+    
+    var newCat: Cat?
+
+    //Аутлеты для добавления новой кошки
+    @IBOutlet var newCatImage: UIImageView!
+    @IBOutlet var newCatName: UITextField!
+    @IBOutlet var newCatPlace: UITextField!
+    @IBOutlet var newCatQuote: UITextField!
+    
+    
+    @IBOutlet var saveButton: UIBarButtonItem!
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-        
+        //при загрузке кнопка добавить - недоступна
+        saveButton.isEnabled = false
+        //если имя заполнрено - кнопка добавить доступна, в противном случае нет
+        newCatName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
     }
     //MARK: - Работа с алерт контроллером
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -74,6 +88,25 @@ extension NewCatTableViewController: UITextFieldDelegate {
         return true
     }
     
+    @objc private func textFieldChanged() {
+        
+        if newCatName.text?.isEmpty == false {
+            saveButton.isEnabled = true
+        } else {
+            saveButton.isEnabled = false
+        }
+        
+    }
+    func saveNewCat () {
+        // принудительно выделяем опционал с нюкеттекст потому что сама функция сейва вызовится только тогда когда оно не будет пустым
+        newCat = Cat(name: newCatName.text!,
+                     location: newCatPlace.text,
+                     quote: newCatQuote.text,
+                     image: newCatImage.image, // мне кажется тут ошибка это как раз картинка которую можно заполнять
+                    catsImage: nil)
+        
+    }
+    
 }
 
 //MARK: - Работа с изображением
@@ -94,12 +127,10 @@ extension NewCatTableViewController: UIImagePickerControllerDelegate, UINavigati
         }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        imageOfCat.image = info[.editedImage] as? UIImage
-        imageOfCat.contentMode = .scaleAspectFill
-        imageOfCat.clipsToBounds = true
+        newCatImage.image = info[.editedImage] as? UIImage
+        newCatImage.contentMode = .scaleAspectFill
+        newCatImage.clipsToBounds = true
         dismiss(animated: true)
     }
-    
-    
-    }
+}
 

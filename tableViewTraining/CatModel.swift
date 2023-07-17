@@ -5,15 +5,16 @@
 //  Created by Susanna R on 15.07.2023.
 //
 
-import Foundation
+import UIKit
 
 
 struct Cat {
     
     var name: String
-    var location: String
-    var quote: String
-    var image: String
+    var location: String?
+    var quote: String?
+    var image: UIImage?
+    var catsImage: String?
     
     static   let catsNames = ["Анимекот",
                      "Стоямба",
@@ -34,11 +35,12 @@ struct Cat {
     
  static   func getNewCat() -> [Cat] {
         
-        var cats = [Cat]()
+        var catCurrentGuest = [Cat]()
+     
         for cat in catsNames {
-            cats.append(Cat(name: cat, location: "приют 1", quote: "готов найти семью", image: cat))
+            catCurrentGuest.append(Cat(name: cat, location: "приют 1", quote: "готов найти семью", image: nil, catsImage: cat))
         }
-        return cats
+        return catCurrentGuest
     }
     
 }

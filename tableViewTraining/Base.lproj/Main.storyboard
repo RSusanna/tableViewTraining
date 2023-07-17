@@ -117,10 +117,14 @@
                                 <navigationItem title="Новая кошечка" id="5U2-RE-v9g">
                                     <barButtonItem key="leftBarButtonItem" title="Отменить" id="rh4-Oo-1tL">
                                         <connections>
-                                            <segue destination="cVu-Nr-NEP" kind="unwind" unwindAction="cancelAction:" id="mrX-W7-GJh"/>
+                                            <action selector="cancelAction:" destination="cVu-Nr-NEP" id="QU0-06-2se"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem key="rightBarButtonItem" title="Добавить" id="AST-aS-Ybt"/>
+                                    <barButtonItem key="rightBarButtonItem" title="Добавить" id="AST-aS-Ybt">
+                                        <connections>
+                                            <segue destination="cVu-Nr-NEP" kind="unwind" unwindAction="unwindSegue:" id="7ry-LW-o0G"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </navigationItem>
                             </items>
                         </navigationBar>
@@ -261,7 +265,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="отменить" id="G6E-Eh-Mqo"/>
                     <connections>
-                        <outlet property="imageOfCat" destination="9nj-Kb-DxH" id="saj-vo-Pcs"/>
+                        <outlet property="newCatImage" destination="9nj-Kb-DxH" id="saj-vo-Pcs"/>
+                        <outlet property="newCatName" destination="k9F-sh-4b1" id="mDg-Rk-GBQ"/>
+                        <outlet property="newCatPlace" destination="A8N-2T-wny" id="PTm-0B-irg"/>
+                        <outlet property="newCatQuote" destination="4MX-b0-dX6" id="FxX-UY-3hO"/>
+                        <outlet property="saveButton" destination="AST-aS-Ybt" id="RbO-LI-nF3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hzu-yC-CiD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
