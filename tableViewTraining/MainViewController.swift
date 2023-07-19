@@ -9,16 +9,12 @@ import UIKit
 
 class MainViewController: UITableViewController {
 
-        @IBOutlet var catsTableView: UITableView!
-    @IBAction func cancelAction(_ sender: Any) {
-    dismiss(animated: true)
-
-    }
+    @IBOutlet var catsTableView: UITableView!
+    
 
     
           
     var cats = Cat.getNewCat()
-    //15.21
     
           var catsImagesNames = ["Анимекот.jpg", "Стоямба.jpg", "Пробудившийся.jpg", "Йена.jpg", "Невергивап.jpg", "Повар.jpg", "Клерк.jpg", "Офицер.jpg", "Бегемот.jpg", "Лягушка.jpg", "Крайбейби.jpg", "Именинник.jpg", "Инстасамка.jpg", "Малыш.jpg", "Кот.jpg"]
     
@@ -30,7 +26,6 @@ class MainViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return cats.count
  
     }
@@ -49,23 +44,20 @@ class MainViewController: UITableViewController {
         cell.catsQuote.text = catGuest.quote
         
         if catGuest.image == nil {
-            cell.catsImage.image =  UIImage(named: catGuest.catsPhoto!) //тут ошибка
+            cell.catsImage.image =  UIImage(named: catGuest.catsPhoto!) //мб тут ошибка
         } else {
             cell.catsImage.image = catGuest.image
         }
         return cell
     }
-/*
- Ошибка "-[UITableViewCellContentView text]: unrecognized selector sent to instance" возникает, когда вы пытаетесь вызвать метод text на объекте UITableViewCellContentView, который не имеет такого метода. Это может происходить, если вы обращаетесь к неправильному объекту или неправильно настроили связи между компонентами интерфейса и кодом.
+    /*
+     @IBOutlet var catsName: UILabel!
+     @IBOutlet var catsLocation: UILabel!
+     @IBOutlet var catsQuote: UILabel!
+     @IBOutlet var catsImage: UIImageView!
 
- В вашем коде, ошибка находится в методе tableView(_:cellForRowAt:) в классе MainViewController. В этом методе, при установке текстового содержимого для ячейки, вы обращаетесь к неправильному объекту catsName, catsLocation и catsQuote.
+     */
 
- Чтобы исправить ошибку, убедитесь, что вы правильно связали эти элементы пользовательского интерфейса с соответствующими свойствами и методами вашего кода. Убедитесь, что вы обращаетесь к правильным объектам в методе tableView(_:cellForRowAt:) и используете правильные свойства и методы для установки текста.
-
- Проверьте, что у вас есть правильные идентификаторы ячеек в сториборде и что вы правильно связали элементы ячейки с соответствующими свойствами класса CustomTableViewCell.
-
- Также, убедитесь, что у вас нет других мест в коде, где вы пытаетесь обращаться к неправильным объектам или вызывать неправильные методы для текстового содержимого ячеек.
- */
     // MARK: - Navigation
 
 //    In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -77,7 +69,7 @@ class MainViewController: UITableViewController {
     // нужен этот метод чтобы сработала кнопочка отменить
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
         
-        guard let newCatVC = segue.source as? NewCatTableViewController else { return }
+        guard let newCatVC = segue.source as? NewCatViewController else { return }
         newCatVC.saveNewCat()
         cats.append(newCatVC.newCat!)
         tableView.reloadData()

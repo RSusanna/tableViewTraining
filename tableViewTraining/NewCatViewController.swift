@@ -7,9 +7,12 @@
 
 import UIKit
 
-class NewCatTableViewController: UITableViewController {
+class NewCatViewController: UITableViewController {
     
-    
+    @IBAction func cancelAction(_ sender: Any) {
+        dismiss(animated: true)
+    }
+
     var newCat: Cat?
 
     //Аутлеты для добавления новой кошки
@@ -81,7 +84,7 @@ class NewCatTableViewController: UITableViewController {
 
 //MARK: - Работа с клавиатурой
 // Логика для скрытия клавиатуры при нажатии на done
-extension NewCatTableViewController: UITextFieldDelegate {
+extension NewCatViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -111,7 +114,7 @@ extension NewCatTableViewController: UITextFieldDelegate {
 
 //MARK: - Работа с изображением
 
-extension NewCatTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension NewCatViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func chooseImagePicker(sourse: UIImagePickerController.SourceType) {
         
         // проверка на доступность источника выбора изображения

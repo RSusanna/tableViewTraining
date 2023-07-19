@@ -9,8 +9,9 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
     //MARK: - Аутлеты
-    @IBOutlet var catsImage: UIImageView!
     @IBOutlet var catsName: UILabel!
     @IBOutlet var catsLocation: UILabel!
     @IBOutlet var catsQuote: UILabel!
+    @IBOutlet var catsImage: UIImageView!
+
 }
