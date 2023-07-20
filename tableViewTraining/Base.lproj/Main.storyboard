@@ -267,8 +267,9 @@
                     <connections>
                         <outlet property="newCatImage" destination="9nj-Kb-DxH" id="saj-vo-Pcs"/>
                         <outlet property="newCatName" destination="k9F-sh-4b1" id="mDg-Rk-GBQ"/>
-                        <outlet property="newCatPlace" destination="A8N-2T-wny" id="PTm-0B-irg"/>
+                        <outlet property="newCatPlace" destination="h1y-NP-TVS" id="Hoo-M9-WQV"/>
                         <outlet property="newCatQuote" destination="4MX-b0-dX6" id="FxX-UY-3hO"/>
+                        <outlet property="saveButton" destination="AST-aS-Ybt" id="GRA-Nz-bEA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hzu-yC-CiD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
